@@ -4,6 +4,12 @@ vim.opt.guicursor = ""
 -- display line numbers
 vim.opt.nu = true
 
+-- display file name
+vim.opt.title = true
+
+-- use system clipboard
+vim.opt.clipboard = 'unnamed'
+
 -- tab width
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
@@ -25,10 +31,11 @@ vim.opt.incsearch = true
 
 vim.opt.termguicolors = true
 
-vim.opt.scrolloff = 8
+vim.opt.scrolloff = 4
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "80"
+
