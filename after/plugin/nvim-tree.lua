@@ -5,8 +5,25 @@ vim.g.loaded_netrwPlugin = 1
 -- set termguicolors to enable highlight groups
 vim.opt.termguicolors = true
 
--- empty setup using defaults
-require("nvim-tree").setup()
+-- display on right side
+require("nvim-tree").setup({
+  view = {
+    side = "right",
+    width = 40,
+    mappings = {
+      list = {
+        { key = "u", action = "dir_up" },
+      },
+    },
+  },
+  renderer = {
+    group_empty = true,
+  },
+  filters = {
+    dotfiles = false,
+  },
+})
 
+-- toggle open/closed
 vim.keymap.set('n', '<c-n>', ':NvimTreeFindFileToggle<CR>')
 
