@@ -64,4 +64,7 @@ return require('packer').startup(function(use)
 		}
 	}
 
+  -- prettier
+  use('prettier/vim-prettier')
+
 end)
