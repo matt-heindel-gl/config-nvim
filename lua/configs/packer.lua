@@ -67,4 +67,10 @@ return require('packer').startup(function(use)
   -- prettier
   use('prettier/vim-prettier')
 
+  -- auto bracket pairs
+  use('echasnovski/mini.pairs')
+
+  -- comment lines with 'gcc'
+  use('echasnovski/mini.comment')
+
 end)
