@@ -73,4 +73,7 @@ return require('packer').startup(function(use)
   -- comment lines with 'gcc'
   use('echasnovski/mini.comment')
 
+  -- marks
+  use('chentoast/marks.nvim')
+
 end)
