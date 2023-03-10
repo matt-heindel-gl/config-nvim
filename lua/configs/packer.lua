@@ -26,13 +26,7 @@ return require('packer').startup(function(use)
   }
 
   -- Color Scheme
-	use({
-		'rose-pine/neovim',
-		as = 'rose-pine',
-		config = function()
-			vim.cmd('colorscheme rose-pine')
-		end
-	})
+  use 'tomasiser/vim-code-dark'
 
   -- Syntax Highlighting, Language Parsing
 	use({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'})
