@@ -76,4 +76,8 @@ return require('packer').startup(function(use)
   -- file switching
   use 'theprimeagen/harpoon'
 
+  -- scollbar + colors
+  use 'petertriho/nvim-scrollbar'
+  use 'folke/tokyonight.nvim'
+
 end)
