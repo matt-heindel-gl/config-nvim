@@ -67,13 +67,13 @@ return require('packer').startup(function(use)
   -- comment lines with 'gcc'
   use('echasnovski/mini.comment')
 
-  -- marks
-  use('chentoast/marks.nvim')
-
   -- smooth scroll
   use 'yuttie/comfortable-motion.vim'
 
   -- :GBrowse to open file on remote
   use 'tpope/vim-rhubarb'
+
+  -- file switching
+  use 'theprimeagen/harpoon'
 
 end)
