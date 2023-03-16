@@ -73,4 +73,7 @@ return require('packer').startup(function(use)
   -- smooth scroll
   use 'yuttie/comfortable-motion.vim'
 
+  -- :GBrowse to open file on remote
+  use 'tpope/vim-rhubarb'
+
 end)

@@ -198,6 +198,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/mattheindel/.local/share/nvim/site/pack/packer/start/vim-prettier",
     url = "https://github.com/prettier/vim-prettier"
+  },
+  ["vim-rhubarb"] = {
+    loaded = true,
+    path = "/Users/mattheindel/.local/share/nvim/site/pack/packer/start/vim-rhubarb",
+    url = "https://github.com/tpope/vim-rhubarb"
   }
 }
 
