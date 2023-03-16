@@ -70,4 +70,7 @@ return require('packer').startup(function(use)
   -- marks
   use('chentoast/marks.nvim')
 
+  -- smooth scroll
+  use 'yuttie/comfortable-motion.vim'
+
 end)
