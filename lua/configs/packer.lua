@@ -80,4 +80,7 @@ return require('packer').startup(function(use)
   use 'petertriho/nvim-scrollbar'
   use 'folke/tokyonight.nvim'
 
+  -- git marks in gutter
+  use 'airblade/vim-gitgutter'
+
 end)
