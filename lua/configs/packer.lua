@@ -33,6 +33,8 @@ return require('packer').startup(function(use)
 
   -- Git
 	use('tpope/vim-fugitive')
+  -- :GBrowse to open file on remote
+  use 'tpope/vim-rhubarb'
 
   -- LSP
 	use {
@@ -67,11 +69,11 @@ return require('packer').startup(function(use)
   -- comment lines with 'gcc'
   use('echasnovski/mini.comment')
 
+  -- highlight word orccurances
+  use('echasnovski/mini.cursorword')
+
   -- smooth scroll
   use 'yuttie/comfortable-motion.vim'
-
-  -- :GBrowse to open file on remote
-  use 'tpope/vim-rhubarb'
 
   -- file switching
   use 'theprimeagen/harpoon'

@@ -139,6 +139,11 @@ _G.packer_plugins = {
     path = "/Users/mattheindel/.local/share/nvim/site/pack/packer/start/mini.comment",
     url = "https://github.com/echasnovski/mini.comment"
   },
+  ["mini.cursorword"] = {
+    loaded = true,
+    path = "/Users/mattheindel/.local/share/nvim/site/pack/packer/start/mini.cursorword",
+    url = "https://github.com/echasnovski/mini.cursorword"
+  },
   ["mini.pairs"] = {
     loaded = true,
     path = "/Users/mattheindel/.local/share/nvim/site/pack/packer/start/mini.pairs",
