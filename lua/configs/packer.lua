@@ -85,4 +85,10 @@ return require('packer').startup(function(use)
   -- git marks in gutter
   use 'airblade/vim-gitgutter'
 
+  -- statusline
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+  }
+
 end)
