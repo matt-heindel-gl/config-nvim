@@ -47,23 +47,21 @@
     use_diagnostic_signs = false -- enabling this will use the signs defined in your lsp client
 }
 
--- disable inline diagnostics
-
 vim.keymap.set("n", "<leader>tt", "<cmd>TroubleToggle<cr>",
-  {silent = true, noremap = true}
+  {silent = true, noremap = true, desc = 'toggle'}
 )
 vim.keymap.set("n", "<leader>tw", "<cmd>Trouble workspace_diagnostics<cr>",
-  {silent = true, noremap = true}
+  {silent = true, noremap = true, desc = 'workspace'}
 )
 vim.keymap.set("n", "<leader>td", "<cmd>Trouble document_diagnostics<cr>",
-  {silent = true, noremap = true}
+  {silent = true, noremap = true, desc = 'document'}
 )
 vim.keymap.set("n", "<leader>tl", "<cmd>Trouble loclist<cr>",
-  {silent = true, noremap = true}
+  {silent = true, noremap = true, desc = 'loclist'}
 )
 vim.keymap.set("n", "<leader>tq", "<cmd>Trouble quickfix<cr>",
-  {silent = true, noremap = true}
+  {silent = true, noremap = true, desc = 'quickfix'}
 )
 vim.keymap.set("n", "<leader>tr", "<cmd>Trouble lsp_references<cr>",
-  {silent = true, noremap = true}
+  {silent = true, noremap = true, desc = 'references'}
 )

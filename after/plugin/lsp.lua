@@ -6,6 +6,12 @@ lsp.on_attach(function(client, bufnr)
   navic.attach(client, bufnr)
 end)
 
+-- override keymaps with lsp-zero's
+lsp.default_keymaps({
+  buffer = bufnr,
+  preserve_mappings = false
+})
+
 lsp.setup()
 
 -- Mason Package Index

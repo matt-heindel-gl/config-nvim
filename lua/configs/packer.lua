@@ -106,4 +106,8 @@ return require('packer').startup(function(use)
     requires = "neovim/nvim-lspconfig"
   }
 
+  -- whichkey hints
+  use "folke/which-key.nvim"
+  
+
 end)

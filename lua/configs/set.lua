@@ -50,9 +50,6 @@ vim.opt.updatetime = 50
 -- ruler
 vim.opt.colorcolumn = "100"
 
--- search and replace current word
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-
 -- case insensitive by default
 vim.api.nvim_command("set ignorecase")
 
