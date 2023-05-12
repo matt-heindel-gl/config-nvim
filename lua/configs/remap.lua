@@ -24,6 +24,8 @@ vim.keymap.set("n", ":", ";")
 -- center cursor on last position
 vim.keymap.set({"n", "v"}, "<C-o>", "<C-o>zz")
 vim.keymap.set({"n", "v"}, "<C-i>", "<C-i>zz")
+vim.keymap.set('n', '*', '*zz', {desc = 'Search and center screen'})
+vim.keymap.set('n', '#', '#zz', {desc = 'Search and center screen'})
 
 -- scroll half page with cursor reset
 -- commenting out in favor of smooth scrolling w/ comfortable-motion.vim

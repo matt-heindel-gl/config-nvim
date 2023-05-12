@@ -1,13 +1,12 @@
-local lsp = require("lsp-zero")
+local lsp = require("lsp-zero").preset({})
+local navic = require("nvim-navic")
 
-lsp.preset("recommended")
-
--- Mason Package Index
--- https://github.com/williamboman/mason.nvim/blob/main/PACKAGES.md#mason-package-index
-lsp.ensure_installed({
-  'tsserver',
-  'eslint',
-})
+lsp.on_attach(function(client, bufnr)
+  lsp.default_keymaps({buffer = bufnr})
+  navic.attach(client, bufnr)
+end)
 
 lsp.setup()
 
+-- Mason Package Index
+-- https://mason-registry.dev/registry/list

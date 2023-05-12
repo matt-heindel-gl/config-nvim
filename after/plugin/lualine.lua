@@ -1,3 +1,5 @@
+local navic = require("nvim-navic")
+
 require('lualine').setup {
   options = {
     icons_enabled = true,
@@ -36,8 +38,8 @@ require('lualine').setup {
   tabline = {},
   winbar = {
     lualine_a = {},
-    lualine_b = {},
-    lualine_c = {},
+    lualine_b = {'%f'},
+    lualine_c = {'navic', color_correction = nil, navic_opts=nil},
     lualine_x = {},
     lualine_y = {},
     lualine_z = {}

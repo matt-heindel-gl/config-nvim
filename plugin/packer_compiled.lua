@@ -169,6 +169,11 @@ _G.packer_plugins = {
     path = "/Users/mattheindel/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-navic"] = {
+    loaded = true,
+    path = "/Users/mattheindel/.local/share/nvim/site/pack/packer/start/nvim-navic",
+    url = "https://github.com/SmiteshP/nvim-navic"
+  },
   ["nvim-scrollbar"] = {
     loaded = true,
     path = "/Users/mattheindel/.local/share/nvim/site/pack/packer/start/nvim-scrollbar",
@@ -218,6 +223,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/mattheindel/.local/share/nvim/site/pack/packer/start/vim-code-dark",
     url = "https://github.com/tomasiser/vim-code-dark"
+  },
+  ["vim-devicons"] = {
+    loaded = true,
+    path = "/Users/mattheindel/.local/share/nvim/site/pack/packer/start/vim-devicons",
+    url = "https://github.com/ryanoasis/vim-devicons"
   },
   ["vim-fugitive"] = {
     loaded = true,

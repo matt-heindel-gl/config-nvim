@@ -83,6 +83,9 @@ return require('packer').startup(function(use)
   use 'folke/tokyonight.nvim'
   use 'folke/lsp-colors.nvim'
 
+  -- icons
+  use 'ryanoasis/vim-devicons'
+
   -- diagnostic virtual text
   use {
       "folke/trouble.nvim",
@@ -96,6 +99,11 @@ return require('packer').startup(function(use)
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+  }
+  -- breadcrumbs
+  use {
+    "SmiteshP/nvim-navic",
+    requires = "neovim/nvim-lspconfig"
   }
 
 end)
