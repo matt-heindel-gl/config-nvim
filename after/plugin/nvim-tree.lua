@@ -10,7 +10,7 @@ vim.opt.termguicolors = true
 require("nvim-tree").setup({
   view = {
     side = "right",
-    width = 40,
+    width = 50,
     mappings = {
       list = {
         { key = "u", action = "dir_up" },

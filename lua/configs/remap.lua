@@ -15,6 +15,16 @@ vim.keymap.set("x", "<leader>p", [["_dP]])
 vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
+-- format and save
+vim.keymap.set({"n", "v", "i"}, "<C-s>", "<Esc>:Prettier<CR>:w<CR>")
+
+-- no more shift key for commands
+vim.keymap.set("n", ";", ":")
+vim.keymap.set("n", ":", ";")
+-- center cursor on last position
+vim.keymap.set({"n", "v"}, "<C-o>", "<C-o>zz")
+vim.keymap.set({"n", "v"}, "<C-i>", "<C-i>zz")
+
 -- scroll half page with cursor reset
 -- commenting out in favor of smooth scrolling w/ comfortable-motion.vim
 -- vim.keymap.set("n", "<C-d>", "<C-d>zz")
