@@ -119,6 +119,11 @@ _G.packer_plugins = {
     path = "/Users/mattheindel/.local/share/nvim/site/pack/packer/start/harpoon",
     url = "https://github.com/theprimeagen/harpoon"
   },
+  ["lsp-colors.nvim"] = {
+    loaded = true,
+    path = "/Users/mattheindel/.local/share/nvim/site/pack/packer/start/lsp-colors.nvim",
+    url = "https://github.com/folke/lsp-colors.nvim"
+  },
   ["lsp-zero.nvim"] = {
     loaded = true,
     path = "/Users/mattheindel/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
@@ -164,11 +169,6 @@ _G.packer_plugins = {
     path = "/Users/mattheindel/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
-  ["nvim-navic"] = {
-    loaded = true,
-    path = "/Users/mattheindel/.local/share/nvim/site/pack/packer/start/nvim-navic",
-    url = "https://github.com/SmiteshP/nvim-navic"
-  },
   ["nvim-scrollbar"] = {
     loaded = true,
     path = "/Users/mattheindel/.local/share/nvim/site/pack/packer/start/nvim-scrollbar",
@@ -208,6 +208,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/mattheindel/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
     url = "https://github.com/folke/tokyonight.nvim"
+  },
+  ["trouble.nvim"] = {
+    loaded = true,
+    path = "/Users/mattheindel/.local/share/nvim/site/pack/packer/start/trouble.nvim",
+    url = "https://github.com/folke/trouble.nvim"
   },
   ["vim-code-dark"] = {
     loaded = true,

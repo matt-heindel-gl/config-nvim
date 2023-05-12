@@ -20,7 +20,7 @@ vim.keymap.set('n', '<leader>b', builtin.buffers, {})
 
 -- ## Neovim LSP Pickers
 -- list diagnostics
-vim.keymap.set('n', '<leader>d', builtin.diagnostics, {})
+vim.keymap.set('n', '<leader>db', builtin.diagnostics, {})
 -- search history
 vim.keymap.set('n', '<leader>sh', builtin.search_history, {})
 vim.keymap.set('n', '<leader>r', builtin.lsp_references, {})

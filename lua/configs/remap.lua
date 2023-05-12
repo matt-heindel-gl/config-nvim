@@ -29,3 +29,8 @@ vim.keymap.set({"n", "v"}, "<C-i>", "<C-i>zz")
 -- commenting out in favor of smooth scrolling w/ comfortable-motion.vim
 -- vim.keymap.set("n", "<C-d>", "<C-d>zz")
 -- vim.keymap.set("n", "<C-u>", "<C-u>zz")
+
+-- enable/disable display inline diagnostics
+vim.keymap.set("n", "<leader>dd", ":lua vim.diagnostic.config{virtual_text=false}<CR>")
+vim.keymap.set("n", "<leader>de", ":lua vim.diagnostic.config{virtual_text=true}<CR>")
+

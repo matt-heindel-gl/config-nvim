@@ -81,6 +81,13 @@ return require('packer').startup(function(use)
   -- scollbar + colors
   use 'petertriho/nvim-scrollbar'
   use 'folke/tokyonight.nvim'
+  use 'folke/lsp-colors.nvim'
+
+  -- diagnostic virtual text
+  use {
+      "folke/trouble.nvim",
+    requires = "nvim-tree/nvim-web-devicons",
+  }
 
   -- git marks in gutter
   use 'airblade/vim-gitgutter'
