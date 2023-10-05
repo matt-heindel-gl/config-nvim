@@ -41,7 +41,7 @@ vim.opt.incsearch = true
 vim.opt.termguicolors = true
 
 -- scrolling buffer
-vim.opt.scrolloff = 4
+-- vim.opt.scrolloff = 4
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
@@ -52,4 +52,8 @@ vim.opt.colorcolumn = "100"
 
 -- case insensitive by default
 vim.api.nvim_command("set ignorecase")
+
+-- spell check
+vim.opt.spelllang = 'en_us'
+vim.opt.spell = true
 

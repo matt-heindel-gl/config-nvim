@@ -9,7 +9,8 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("n", "J", "mzJ`z")
 
 -- search and replace current word
-vim.keymap.set("n", "<leader>sr", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], {desc = 'search/replace under cursor'})
+vim.keymap.set("n", "<leader>srf", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], {desc = 'search/replace file under cursor'})
+vim.keymap.set("n", "<leader>srl", [[:s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], {desc = 'search/replace line under cursor'})
 
 -- paste and preserve bufer
 vim.keymap.set("x", "<leader>pp", [["_dP]], {desc = 'paste without yanking'})
@@ -19,14 +20,15 @@ vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
 -- format and save
-vim.keymap.set({"n", "v", "i"}, "<C-s>", "<Esc>:Prettier<CR>:w<CR>", {desc = 'format and save'})
+vim.keymap.set({"n", "v", "i", "x", "s"}, "<C-s>", "<Esc>:Prettier<CR>:w<CR><Esc>", {desc = 'format and save'})
 
 -- no more shift key for commands
-vim.keymap.set("n", ";", ":")
-vim.keymap.set("n", ":", ";")
+-- vim.keymap.set("n", ";", ":")
+-- vim.keymap.set("n", ":", ";")
 -- center cursor on last position
 vim.keymap.set({"n", "v"}, "<C-o>", "<C-o>zz", {desc = 'next pos, center screen'})
 vim.keymap.set({"n", "v"}, "<C-i>", "<C-i>zz", {desc = 'last pos, center screen'})
+
 vim.keymap.set('n', '*', '*zz', {desc = 'next occurance, center screen'})
 vim.keymap.set('n', '#', '#zz', {desc = 'last occurance, center screen'})
 
@@ -34,3 +36,33 @@ vim.keymap.set('n', '#', '#zz', {desc = 'last occurance, center screen'})
 vim.keymap.set("n", "<leader>dd", ":lua vim.diagnostic.config{virtual_text=false}<CR>", {desc = 'diagnostics disable virtual text'})
 vim.keymap.set("n", "<leader>de", ":lua vim.diagnostic.config{virtual_text=true}<CR>", {desc = 'diagnostics enable virtual text'})
 
+-- spell check
+vim.keymap.set({"n", "v"}, "<leader>ss", ":set invspell<CR>", {desc = 'spell check toggle'})
+
+vim.keymap.set({"n", "v"}, "<leader>ww", ":set invwrap invlinebreak<CR>", {desc = 'wrap line toggle'})
+
+-- add line without leaving normal mode
+vim.keymap.set('n', '<leader>o', [[:call append(line('.'), '')<CR>]], { silent = true, desc = 'add line without moving'}) 
+-- vim.keymap.set('n', '<leader>O', [[:execute 'normal! P']]:format(vim.api.nvim_replace_termcodes('^', true, false, true)), { expr = false, silent = true, desc = 'add line without moving'}) 
+
+
+-- debug line
+vim.fn.insertDebugLine = function()
+  local word = vim.fn.expand("<cword>")
+  vim.cmd("normal! oconsole.log(' >> " .. word .. "::', " .. word .. ")")
+end
+
+vim.keymap.set({'n', 'v'}, "<leader>wl", "<cmd>lua vim.fn.insertDebugLine()<CR>", { silent = true, desc = 'word log' })
+
+-- -- comment line
+-- vim.fn.insertCommentLine = function()
+--   local word = vim.fn.expand("<cword>")
+--   vim.cmd("normal! O\\/ " . word)
+--
+--   -- execute 'normal! O\\/' . word
+-- end
+--
+-- vim.keymap.set({'n', 'v'}, "<leader>wc", "<cmd>lua vim.fn.insertCommentLine()<CR>", { silent = true, desc = 'word comment' })
+-- //'insertCommentLine
+-- console.log('insertCommentLine::', insertCommentLine)
+--
