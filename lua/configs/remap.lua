@@ -36,6 +36,9 @@ vim.keymap.set('n', '#', '#zz', {desc = 'last occurance, center screen'})
 vim.keymap.set("n", "<leader>dd", ":lua vim.diagnostic.config{virtual_text=false}<CR>", {desc = 'diagnostics disable virtual text'})
 vim.keymap.set("n", "<leader>de", ":lua vim.diagnostic.config{virtual_text=true}<CR>", {desc = 'diagnostics enable virtual text'})
 
+-- diagnostic
+vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, {desc = 'vim code actions'})
+
 -- spell check
 vim.keymap.set({"n", "v"}, "<leader>ss", ":set invspell<CR>", {desc = 'spell check toggle'})
 
@@ -49,7 +52,7 @@ vim.keymap.set('n', '<leader>o', [[:call append(line('.'), '')<CR>]], { silent =
 -- debug line
 vim.fn.insertDebugLine = function()
   local word = vim.fn.expand("<cword>")
-  vim.cmd("normal! oconsole.log(' >> " .. word .. "::', " .. word .. ")")
+  vim.cmd("normal! oconsole.log(' >> " .. word .. " ::', " .. word .. ")")
 end
 
 vim.keymap.set({'n', 'v'}, "<leader>wl", "<cmd>lua vim.fn.insertDebugLine()<CR>", { silent = true, desc = 'word log' })

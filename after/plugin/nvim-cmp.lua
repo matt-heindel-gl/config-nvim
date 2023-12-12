@@ -1,4 +1,5 @@
 local cmp = require("cmp")
+local cmp_action = require('lsp-zero').cmp_action()
 
 cmp.setup({
   preselect = 'item',
@@ -7,5 +8,6 @@ cmp.setup({
   },
   mapping = {
     ['<CR>'] = cmp.mapping.confirm({select = true}),
+    ['<Tab>'] = cmp_action.luasnip_supertab(),
   }
 })

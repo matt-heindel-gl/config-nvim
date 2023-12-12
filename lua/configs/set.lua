@@ -57,3 +57,5 @@ vim.api.nvim_command("set ignorecase")
 vim.opt.spelllang = 'en_us'
 vim.opt.spell = true
 
+-- highlight cursor line
+vim.opt.cursorline = true
