@@ -106,5 +106,8 @@ return require('packer').startup(function(use)
 
   -- whichkey hints
   use "folke/which-key.nvim"
-  
+
+  -- GitHub CoPilot
+  use "github/copilot.vim"
+
 end)

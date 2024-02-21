@@ -8,6 +8,5 @@ cmp.setup({
   },
   mapping = {
     ['<CR>'] = cmp.mapping.confirm({select = true}),
-    ['<Tab>'] = cmp_action.luasnip_supertab(),
   }
 })

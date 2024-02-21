@@ -89,6 +89,11 @@ _G.packer_plugins = {
     path = "/Users/mattheindel/.local/share/nvim/site/pack/packer/start/comfortable-motion.vim",
     url = "https://github.com/yuttie/comfortable-motion.vim"
   },
+  ["copilot.vim"] = {
+    loaded = true,
+    path = "/Users/mattheindel/.local/share/nvim/site/pack/packer/start/copilot.vim",
+    url = "https://github.com/github/copilot.vim"
+  },
   harpoon = {
     loaded = true,
     path = "/Users/mattheindel/.local/share/nvim/site/pack/packer/start/harpoon",
