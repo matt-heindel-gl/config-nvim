@@ -1,9 +1,9 @@
 -- wide cursor while editing
 vim.opt.guicursor = ""
 
--- display *relative* line numbers
+-- display line numbers
 vim.opt.nu = true
-vim.opt.relativenumber = true
+-- vim.opt.relativenumber = true
 
 -- display file name
 vim.opt.title = true
