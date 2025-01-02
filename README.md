@@ -21,3 +21,7 @@ Loosely based on [ThePrimeagen's init.lua](https://github.com/ThePrimeagen/init.
   ```bash
   gh repo clone matt-heindel-gl/config-nvim  ~/.config/nvim/
   ```
+
+### Updating dependencies
+
+Plug-ins are managed by [packer](https://github.com/wbthomason/packer.nvim) in `lua/configs/packer.lua`. To run an update open nvim and execute `:so`, then `:PackerSync`.
