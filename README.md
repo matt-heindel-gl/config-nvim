@@ -24,4 +24,14 @@ Loosely based on [ThePrimeagen's init.lua](https://github.com/ThePrimeagen/init.
 
 ### Updating dependencies
 
-Plug-ins are managed by [packer](https://github.com/wbthomason/packer.nvim) in `lua/configs/packer.lua`. To run an update open nvim and execute `:so`, then `:PackerSync`.
+Plug-ins are managed by [packer](https://github.com/wbthomason/packer.nvim) in `lua/configs/packer.lua`. To perform an update, 
+
+- navigate to your config folder
+
+  ```bash
+  cd ~/.config/nvim
+  ```
+
+- open neovim with `nvim .`
+- open the file `lua/configs/packer.lua`
+- execute the command `:so`, then `:PackerSync`.
