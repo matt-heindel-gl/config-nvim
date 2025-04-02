@@ -22,16 +22,21 @@ Loosely based on [ThePrimeagen's init.lua](https://github.com/ThePrimeagen/init.
   gh repo clone matt-heindel-gl/config-nvim  ~/.config/nvim/
   ```
 
-### Updating dependencies
-
-Plug-ins are managed by [packer](https://github.com/wbthomason/packer.nvim) in `lua/configs/packer.lua`. To perform an update, 
-
-- navigate to your config folder
+- install [packer](https://github.com/wbthomason/packer.nvim) (plugin manager)
 
   ```bash
-  cd ~/.config/nvim
+  git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
   ```
 
-- open neovim with `nvim .`
-- open the file `lua/configs/packer.lua`
-- execute the command `:so`, then `:PackerSync`.
+### Installing/Updating dependencies
+
+After installing all prerequisites:
+
+1. Navigate to `~/.config/nvim`
+1. Start Neovim by running `nvim .`
+1. You may see some initial errors - this is normal as plugins aren't installed yet
+1. Open the file `lua/configs/packer.lua`
+1. Run the command `:so`
+1. Run the command `:PackerSync` to install all plugins
+1. Wait for installation to complete, then quit Neovim (`:qa`)
+1. Start Neovim again and everything should be properly set up

@@ -16,13 +16,11 @@ return require('packer').startup(function(use)
 	}
 
   -- File Explorer
-  use 'nvim-tree/nvim-web-devicons'
   use {
     'nvim-tree/nvim-tree.lua',
     requires = {
       'nvim-tree/nvim-web-devicons', -- optional, for file icons
     },
-    tag = 'nightly' -- optional, updated every week. (see issue #1193)
   }
 
   -- Color Scheme
@@ -106,8 +104,4 @@ return require('packer').startup(function(use)
 
   -- whichkey hints
   use "folke/which-key.nvim"
-
-  -- GitHub CoPilot
-  use "github/copilot.vim"
-
 end)

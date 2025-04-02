@@ -1,4 +1,5 @@
 vim.g.mapleader = ' '
+
 vim.keymap.set('n', '<leader>cd', vim.cmd.Ex)
 
 -- move selected lines up/down
@@ -21,6 +22,7 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 
 -- format and save
 vim.keymap.set({"n", "v", "i", "x", "s"}, "<C-s>", "<Esc>:Prettier<CR>:w<CR><Esc>", {desc = 'format and save'})
+vim.keymap.set({"n", "v", "i", "x", "s"}, "<D-s>", "<Esc>:Prettier<CR>:w<CR><Esc>", {desc = 'format and save'})
 
 -- no more shift key for commands
 -- vim.keymap.set("n", ";", ":")
@@ -45,8 +47,8 @@ vim.keymap.set({"n", "v"}, "<leader>ss", ":set invspell<CR>", {desc = 'spell che
 vim.keymap.set({"n", "v"}, "<leader>ww", ":set invwrap invlinebreak<CR>", {desc = 'wrap line toggle'})
 
 -- add line without leaving normal mode
-vim.keymap.set('n', '<leader>o', [[:call append(line('.'), '')<CR>]], { silent = true, desc = 'add line without moving'}) 
--- vim.keymap.set('n', '<leader>O', [[:execute 'normal! P']]:format(vim.api.nvim_replace_termcodes('^', true, false, true)), { expr = false, silent = true, desc = 'add line without moving'}) 
+vim.keymap.set('n', '<leader>o', [[:call append(line('.'), '')<CR>]], { silent = true, desc = 'add line without moving'})
+-- vim.keymap.set('n', '<leader>O', [[:execute 'normal! P']]:format(vim.api.nvim_replace_termcodes('^', true, false, true)), { expr = false, silent = true, desc = 'add line without moving'})
 
 
 -- debug line
