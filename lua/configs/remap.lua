@@ -22,6 +22,7 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 
 -- format and save
 vim.keymap.set({"n", "v", "i", "x", "s"}, "<C-s>", "<Esc>:Prettier<CR>:w<CR><Esc>", {desc = 'format and save'})
+-- 0x13 in hexcode
 vim.keymap.set({"n", "v", "i", "x", "s"}, "<D-s>", "<Esc>:Prettier<CR>:w<CR><Esc>", {desc = 'format and save'})
 
 -- no more shift key for commands

@@ -40,3 +40,22 @@ After installing all prerequisites:
 1. Run the command `:PackerSync` to install all plugins
 1. Wait for installation to complete, then quit Neovim (`:qa`)
 1. Start Neovim again and everything should be properly set up
+
+### iTerm2 Key Bindings
+
+To ensure all keybindings work correctly when using iTerm2, you need to configure custom key bindings:
+
+1. Open iTerm2 Preferences (cmd+,)
+2. Go to Profiles > Keys
+3. Click "Key Bindings"
+4. Add these bindings:
+   - cmd+p:
+     - Keyboard Shortcut: cmd+p
+     - Action: Send Hex Code
+     - Value: 0x10
+   - cmd+s:
+     - Keyboard Shortcut: cmd+s
+     - Action: Send Hex Code
+     - Value: 0x13
+
+This allows these key combinations to be properly forwarded to Neovim instead of being intercepted by iTerm2.

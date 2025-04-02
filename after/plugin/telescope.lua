@@ -6,6 +6,8 @@ local builtin = require('telescope.builtin')
 -- ## File Pickers
 -- fuzzy file finder
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {desc = 'find files'})
+-- 0x10 in hexcode
+vim.keymap.set('n', '<D-p>', builtin.find_files, {desc = 'find files'})
 -- vim.keymap.set('n', '<leader>fr', builtin.find_files, {desc = 'files recently closed'})
 vim.keymap.set('n', '<leader>fa', function()
   builtin.find_files({ no_ignore = true, hidden = true })
