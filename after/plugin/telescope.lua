@@ -1,5 +1,29 @@
 -- Fuzzy File Finder
 -- https://github.com/nvim-telescope/telescope.nvim#pickers
+print("telescope setup start")
+local harpoon = require('harpoon')
+harpoon:setup({})
+
+-- basic telescope configuration
+local conf = require("telescope.config").values
+local function toggle_telescope(harpoon_files)
+    local file_paths = {}
+    for _, item in ipairs(harpoon_files.items) do
+        table.insert(file_paths, item.value)
+    end
+
+    require("telescope.pickers").new({}, {
+        prompt_title = "Harpoon",
+        finder = require("telescope.finders").new_table({
+            results = file_paths,
+        }),
+        previewer = conf.file_previewer({}),
+        sorter = conf.generic_sorter({}),
+    }):find()
+end
+
+vim.keymap.set("n", "<leader>hl", function() toggle_telescope(harpoon:list()) end,
+    { desc = "Open harpoon window" })
 
 local builtin = require('telescope.builtin')
 
@@ -47,3 +71,4 @@ vim.keymap.set('n', '<leader>gl', builtin.git_commits, {desc = 'log of commits'}
 -- stash list
 vim.keymap.set('n', '<leader>gt', builtin.git_stash, {desc = 'stashes'})
 
+print("telescope setup complete")

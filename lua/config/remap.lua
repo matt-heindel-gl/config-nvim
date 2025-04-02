@@ -1,3 +1,4 @@
+print('remapping')
 vim.g.mapleader = ' '
 vim.keymap.set('n', '<leader>cd', vim.cmd.Ex)
 
@@ -12,7 +13,7 @@ vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "<leader>srf", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], {desc = 'search/replace file under cursor'})
 vim.keymap.set("n", "<leader>srl", [[:s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], {desc = 'search/replace line under cursor'})
 
--- paste and preserve bufer
+-- paste and preserve buffer
 vim.keymap.set("x", "<leader>pp", [["_dP]], {desc = 'paste without yanking'})
 
 -- yank to system clipboard
@@ -47,7 +48,6 @@ vim.keymap.set({"n", "v"}, "<leader>ww", ":set invwrap invlinebreak<CR>", {desc 
 -- add line without leaving normal mode
 vim.keymap.set('n', '<leader>o', [[:call append(line('.'), '')<CR>]], { silent = true, desc = 'add line without moving'}) 
 -- vim.keymap.set('n', '<leader>O', [[:execute 'normal! P']]:format(vim.api.nvim_replace_termcodes('^', true, false, true)), { expr = false, silent = true, desc = 'add line without moving'}) 
-
 
 -- debug line
 vim.fn.insertDebugLine = function()

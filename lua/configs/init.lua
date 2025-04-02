@@ -1,2 +1,106 @@
-require('configs.set')
-require('configs.remap')
+-- local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+-- if not vim.loop.fs_stat(lazypath) then
+--   vim.fn.system({
+--     "git",
+--     "clone",
+--     "--filter=blob:none",
+--     "https://github.com/folke/lazy.nvim.git",
+--     lazypath,
+--   })
+-- end
+-- vim.opt.rtp:prepend(lazypath)
+--
+-- require("lazy").setup({
+--     -- Fuzzy Finder
+--     {
+--       'nvim-telescope/telescope.nvim',
+--       tag = '0.1.8',
+--       dependencies = { 'nvim-lua/plenary.nvim' }
+--     },
+--
+--     -- File Explorer
+--     {
+--       'nvim-tree/nvim-tree.lua',
+--       dependencies = { 'nvim-tree/nvim-web-devicons' },
+--     },
+--
+--     -- Color Scheme
+--     { 'tomasiser/vim-code-dark' },
+--
+--     -- Syntax Highlighting, Language Parsing
+--     {
+--       'nvim-treesitter/nvim-treesitter',
+--       build = ':TSUpdate'
+--     },
+--
+--     -- Git
+--     { 'tpope/vim-fugitive' },
+--     -- :GBrowse to open file on remote
+--     { 'tpope/vim-rhubarb' },
+--
+--     -- LSP
+--     {
+--       'VonHeikemen/lsp-zero.nvim',
+--       branch = 'v2.x',
+--       dependencies = {
+--         { 'neovim/nvim-lspconfig' },
+--         { 'williamboman/mason.nvim', build = 'MasonUpdate' },
+--         { 'williamboman/mason-lspconfig.nvim' },
+--         -- auto complete
+--         { 'hrsh7th/nvim-cmp' },
+--         { 'hrsh7th/cmp-nvim-lsp' },
+--         { 'L3MON4D3/LuaSnip' },
+--       }
+--     },
+--
+--     -- Prettier
+--     { 'prettier/vim-prettier' },
+--
+--   -- auto bracket pairs
+--   { 'echasnovski/mini.pairs'},
+--
+--   -- comment lines with 'gcc'
+--   { 'echasnovski/mini.comment' },
+--
+--   -- highlight word occurrences
+--   { 'echasnovski/mini.cursorword' },
+--
+--   -- smooth scroll
+--   { 'yuttie/comfortable-motion.vim' },
+--
+--   -- scollbar + colors
+--   { 'petertriho/nvim-scrollbar' },
+--   { 'folke/tokyonight.nvim' },
+--   { 'folke/lsp-colors.nvim' },
+--
+--   -- icons
+--   { 'ryanoasis/vim-devicons' },
+--
+--   -- diagnostic virtual text
+--   { 'folke/trouble.nvim' },
+--
+--   -- git marks in gutter
+--   { 'airblade/vim-gitgutter' },
+--
+--   -- statusline
+--   { 'nvim-lualine/lualine.nvim' },
+--   -- breadcrumbs
+--   { 'SmiteshP/nvim-navic' },
+--
+--   -- whichkey hints
+--   { 'folke/which-key.nvim' },
+--
+--   -- GitHub CoPilot
+--   { 'github/copilot.vim' },
+--
+--     -- File switching
+--     {
+--         "ThePrimeagen/harpoon",
+--         branch = "harpoon2",
+--         dependencies = { "nvim-lua/plenary.nvim" }
+--     }
+--   })
+--
+--
+-- require('configs.set')
+-- require('configs.remap')

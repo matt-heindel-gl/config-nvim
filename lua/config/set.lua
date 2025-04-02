@@ -1,3 +1,4 @@
+print('setting')
 -- wide cursor while editing
 vim.opt.guicursor = ""
 
