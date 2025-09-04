@@ -28,6 +28,12 @@ Loosely based on [ThePrimeagen's init.lua](https://github.com/ThePrimeagen/init.
   git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
   ```
 
+- install prettier globally
+
+  ```bash
+  npm install -g prettier
+  ```
+
 ### Installing/Updating dependencies
 
 After installing all prerequisites:
