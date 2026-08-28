@@ -45,6 +45,17 @@ require('lualine').setup {
     lualine_z = {}
 
   },
-  inactive_winbar = {},
+  -- Mirrors `winbar` so focus changes never shift line counts between
+  -- windows — otherwise scroll-bound splits like `:Gblame`'s blame/file
+  -- columns drift out of alignment by one line whenever focus moves,
+  -- since lualine drops the row entirely for `{}`.
+  inactive_winbar = {
+    lualine_a = {},
+    lualine_b = {'%f'},
+    lualine_c = {'navic', color_correction = nil, navic_opts=nil},
+    lualine_x = {},
+    lualine_y = {},
+    lualine_z = {}
+  },
   extensions = {}
 }
