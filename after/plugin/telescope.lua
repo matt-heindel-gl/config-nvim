@@ -1,6 +1,62 @@
 -- Fuzzy File Finder
 -- https://github.com/nvim-telescope/telescope.nvim#pickers
 
+-- Grep results render as `path:lnum:col:text`. The match text is the bulk of
+-- the line, it is already visible in the preview, and on merlin's long paths it
+-- shoves the filename off screen. Show `path:lnum` only.
+--
+-- Display-only override: `ordinal` still resolves to the raw ripgrep line, so
+-- typing in the prompt keeps fuzzy-matching against the hidden match text.
+local make_entry = require('telescope.make_entry')
+local telescope_utils = require('telescope.utils')
+
+local function grep_display(entry)
+  local path = telescope_utils.transform_path({ cwd = entry.cwd }, entry.filename)
+  local text = entry.lnum and (path .. '   :' .. entry.lnum) or path
+  -- Mirrors gen_from_vimgrep's own devicon + highlight handling.
+  local display, hl_group, icon = telescope_utils.transform_devicons(entry.filename, text)
+  if hl_group then
+    return display, { { { 0, #icon }, hl_group } }
+  end
+  return display
+end
+
+-- Built per invocation, not at setup: gen_from_vimgrep captures cwd, which
+-- changes with :cd and nvim-tree.
+local function grep_opts(extra)
+  local opts = vim.tbl_extend('force', { cwd = vim.loop.cwd() }, extra or {})
+  local base = make_entry.gen_from_vimgrep(opts)
+  opts.entry_maker = function(line)
+    local entry = base(line)
+    if entry then
+      entry.display = grep_display
+    end
+    return entry
+  end
+  return opts
+end
+
+require('telescope').setup({
+  pickers = {
+    -- gen_from_quickfix defaults the filename column to a fixed 30, which cuts
+    -- merlin paths off well before anything distinguishing. Half the results
+    -- pane tracks the window instead, with a floor for narrow splits.
+    lsp_references = { fname_width = { 0.5, min = 40 } },
+  },
+  defaults = {
+    -- path_display = { shorten = { len = 3, exclude = { -1, -2 } } },
+    layout_strategy = 'vertical',
+    layout_config = {
+      vertical = {
+        width = 0.9,
+        height = 0.9,
+        preview_height = 0.6,
+        prompt_position = 'bottom',
+      },
+    },
+  },
+})
+
 local builtin = require('telescope.builtin')
 
 -- ## File Pickers
@@ -16,13 +72,13 @@ vim.keymap.set('n', '<C-p>', builtin.git_files, {})
 -- project search
 -- TODO: include gitignored and dot files
 vim.keymap.set('n', '<leader>ps', function()
-	builtin.grep_string({ search = vim.fn.input("Grep > ") })
+	builtin.grep_string(grep_opts({ search = vim.fn.input("Grep > ") }))
 end, {desc = 'project search'})
 vim.keymap.set('n', '<leader>rgf', function()
-	builtin.live_grep()
+	builtin.live_grep(grep_opts())
 end, {desc = 'live grep files'})
 vim.keymap.set('n', '<leader>rgo', function()
-	builtin.live_grep({ grep_open_files = true })
+	builtin.live_grep(grep_opts({ grep_open_files = true }))
 end, {desc = 'live grep open files only'})
 
 -- ## Vim Pickers
