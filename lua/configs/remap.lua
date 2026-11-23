@@ -49,6 +49,18 @@ vim.keymap.set({"n", "v"}, "<leader>ww", ":set invwrap invlinebreak<CR>", {desc 
 
 -- add line without leaving normal mode
 vim.keymap.set('n', '<leader>o', [[:call append(line('.'), '')<CR>]], { silent = true, desc = 'add line without moving'})
+
+-- reveal current file in Finder; falls back to the buffer's dir (netrw) or cwd
+vim.keymap.set('n', '<leader>fo', function()
+  local path = vim.api.nvim_buf_get_name(0)
+  if vim.fn.filereadable(path) == 1 then
+    vim.system({ 'open', '-R', path })
+  elseif vim.fn.isdirectory(path) == 1 then
+    vim.system({ 'open', path })
+  else
+    vim.system({ 'open', vim.fn.getcwd() })
+  end
+end, { desc = 'reveal current file in Finder' })
 -- vim.keymap.set('n', '<leader>O', [[:execute 'normal! P']]:format(vim.api.nvim_replace_termcodes('^', true, false, true)), { expr = false, silent = true, desc = 'add line without moving'})
 
 
