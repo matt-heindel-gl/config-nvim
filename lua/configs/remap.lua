@@ -61,6 +61,16 @@ vim.keymap.set('n', '<leader>fo', function()
     vim.system({ 'open', vim.fn.getcwd() })
   end
 end, { desc = 'reveal current file in Finder' })
+
+vim.keymap.set('n', '<leader>fy', function()
+  local path = vim.fn.expand('%:p')
+  if path == '' then
+    vim.notify('buffer has no file', vim.log.levels.WARN)
+    return
+  end
+  vim.fn.setreg('+', path)
+  vim.notify('yanked ' .. path)
+end, { desc = 'yank full file path to clipboard' })
 -- vim.keymap.set('n', '<leader>O', [[:execute 'normal! P']]:format(vim.api.nvim_replace_termcodes('^', true, false, true)), { expr = false, silent = true, desc = 'add line without moving'})
 
 
